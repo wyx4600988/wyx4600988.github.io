@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="yes" name="apple-touch-fullscreen"><meta content="telephone=no,email=no" name="format-detection"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet"><script src="https://use.fontawesome.com/adaf0e149c.js"></script><link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/monokai_sublime.min.css"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/css/post.css"><link rel="stylesheet" href="/css/markdown-github.css"><title>林水溶的博客</title><script src="/js/googleAnalytics.js"></script></head><body><div id="postContainer"><div id="postTop"><h4 id="logo">Life Is Short</h4><br><br><h2 id="postTitle">解决Scrapy安装时报错：ImportError: No module named twisted.persisted</h2><br><span aria-hidden="true" class="postTime fa fa-calendar">2017-5-14</span><span aria-hidden="true" class="postTags fa fa-tags">&nbsp;Debug</span><span aria-hidden="true" class="postTags fa fa-tags">&nbsp;Python</span><span aria-hidden="true" class="postTags fa fa-tags">&nbsp;Scrapy</span><span aria-hidden="true" class="postTags fa fa-tags">&nbsp;Twisted</span><br><br></div><section id="articleDiv"><p><p>出错原因不清楚．用pip install scrapy，在使用的时侯就会报这样的错．然后用pip install twisted，会出现找不到相关的twisted包的问题．一番Google之后，终于找到<a href="https://github.com/scrapy/scrapy/issues/2580" target="_blank" rel="external">解决方法</a></p></p>
+<p><p><strong>环境：</strong></p></p>
+<p><p>Ubuntu16.04LTS, Python3.6</p></p>
+<p><p><strong>方法一：</strong></p></p>
+<p><p>使用 conda 安装 Scrapy:</p></p>
+<pre><code class="shell">conda install scrapy
+</code></pre>
+<p><strong>方法二:</strong></p>
+<p>通过tar包安装 twisted</p>
+<pre><code class="shell">wget https://pypi.python.org/packages/c0/7c/c1e5b61e30b7ffc96576d2a922615c8068e6996a622be813fc626cef07aa/Twisted-16.3.0.tar.bz2#md5=e044af844623e9fbcbe29f578db6053a
+
+tar jxvf Twisted-16.3.0.tar.bz2
+
+cd Twisted-16.3.0
+
+python3 setup.py install
+</code></pre>
+</section></div><script src="/js/jquery.min.js"></script><script src="/js/highlight.min.js"></script><script src="/js/start.js"></script></body></html>
